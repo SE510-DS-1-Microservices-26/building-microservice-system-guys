@@ -1,9 +1,19 @@
-bin/
-obj/
+# Build
+**/bin/
+**/obj/
+
+# .NET
+*.dll
+*.exe
+*.pdb
+*.runtimeconfig.json
+*.deps.json
+
+# IDE
 .vs/
 .idea/
 *.user
 *.suo
-*.swp
+
+# OS
 .DS_Store
-TestResults/
