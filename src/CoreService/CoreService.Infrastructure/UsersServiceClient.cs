@@ -35,4 +35,17 @@ public class UsersServiceClient : IUsersServiceClient
             throw new ServiceUnavailableException("Users service is unavailable.");
         }
     }
+
+    public async Task<bool> IsHealthyAsync(CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            var response = await _httpClient.GetAsync("/health", cancellationToken);
+            return response.IsSuccessStatusCode;
+        }
+        catch
+        {
+            return false;
+        }
+    }
 }
